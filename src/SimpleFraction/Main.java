@@ -3,13 +3,12 @@ package SimpleFraction;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Fraction frac = new Fraction(10,3);
-		System.out.println(frac.toString());
-		ChaineCryptee chaine = new ChaineCryptee(null,-5);
-		System.out.println(chaine.crypte());
-		chaine = new ChaineCryptee("ceci est un test",17);
-		System.out.println(chaine.crypte());
+		ChaineCryptee var = ChaineCryptee.deEnClair(null, 0);
+		System.out.println(var.getChaineCryptee());
+		var = ChaineCryptee.deEnClair("ceci est un test", 17);
+		System.out.println(var.getChaineCryptee());
+		var = ChaineCryptee.deCryptee("tvtz vjk le kvjk", -9);
+		System.out.println(var.getChaineCryptee());
 	}
 
 }

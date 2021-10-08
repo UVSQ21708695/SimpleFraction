@@ -1,14 +1,25 @@
 package SimpleFraction;
 
 public class ChaineCryptee {
-	private String chaineEnClair;
+	private String chaineCrypte;
 	private int decalage;
-	public ChaineCryptee(String enClair,int decal) {
-		chaineEnClair = enClair;
-		decalage = decal;
+	public static ChaineCryptee deCryptee(String crypte, int decalage) {
+		ChaineCryptee chaine= new ChaineCryptee("",0);
+		chaine.chaineCrypte = crypte;
+		chaine.decalage = decalage;
+		return chaine;
 	}
+	public static ChaineCryptee deEnClair(String enClair,int decalage) {
+		return new ChaineCryptee(enClair, decalage);
+	}
+	private ChaineCryptee(String enClair,int decal) {
+		chaineCrypte = enClair;
+		decalage = decal;
+		chaineCrypte = crypte();
+	}
+	
 	public String deCrypte() {
-		return chaineEnClair;
+		return chaineCrypte;
 	}
 	/*
 	 * cette fonction décale uniquement les caractere alphabétique
@@ -33,19 +44,22 @@ public class ChaineCryptee {
 	 */
 	public String crypte() throws NullPointerException{
 		try {
-			chaineEnClair.equals(null);
+			chaineCrypte.equals(null);
 		}
 		catch(NullPointerException e){
 			System.out.println("la chaine est null");
 		}
 		finally {
-			if(chaineEnClair == null)
-				chaineEnClair = new String();
+			if(chaineCrypte == null)
+				chaineCrypte = new String();
 		}
 			String chiffree = new String();
-			for(int i=0; i<chaineEnClair.length(); i++) {
-				chiffree += decaleCaractere(chaineEnClair.charAt(i),decalage);
+			for(int i=0; i<chaineCrypte.length(); i++) {
+				chiffree += decaleCaractere(chaineCrypte.charAt(i),decalage);
 			}
 			return chiffree;
+	}
+	public String getChaineCryptee() {
+		return chaineCrypte;
 	}
 }
